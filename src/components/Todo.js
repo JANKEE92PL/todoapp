@@ -1,6 +1,6 @@
 import React from "react";
 
-const Todo = ({ description, done, onChangeTodo, index }) => {
+const Todo = ({ description, done, onChangeTodo, onDeleteTodo, index }) => {
   return (
     <div
       className={
@@ -17,7 +17,14 @@ const Todo = ({ description, done, onChangeTodo, index }) => {
       >
         {description}
       </h1>
-      <button className="text-lg bg-gray-400 p-2 text-white">Löschen</button>
+      <button
+        className="text-lg bg-gray-400 p-2 text-white"
+        onClick={() => {
+          onDeleteTodo(index);
+        }}
+      >
+        Löschen
+      </button>
     </div>
   );
 };
